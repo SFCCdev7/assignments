@@ -1,0 +1,22 @@
+<isdecorate template="common/layout/page">
+    <isif condition="${pdict.orderList !== null && pdict.orderList.length > 0}">
+        <table>
+            <tr>
+                <th>${Resource.msg('order.table.head1')}</th>
+                <th>${Resource.msg('order.table.head2')}</th>
+                <th>${Resource.msg('order.table.head3')}</th>
+                <th>${Resource.msg('order.table.head4')}</th>
+            </tr>
+            <isloop items="${pdict.orderList}" var="order" status="loopstatus">
+                <tr>
+                    <td>${Resource.msgf('order.table.body', 'message', null, order.orderId)}</td>
+                    <td>${Resource.msgf('order.table.body', 'message', null, order.shippingAddrFName)}</td>
+                    <td>${Resource.msgf('order.table.body', 'message', null, order.shippingAddrLName)}</td>
+                    <td>${Resource.msgf('order.table.body', 'message', null, order.mail)}</td>
+                </tr>
+            </isloop>
+        </table>
+    <iselse/>
+        <h1>${Resource.msg('order.empty.msg')}</h1>
+    </isif>
+</isdecorate>

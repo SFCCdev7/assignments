@@ -1,0 +1,4 @@
+<!--- TEMPLATENAME: productList.isml --->
+
+<h1> ${elem.name} : ${elem.longDescription} </h1>
+<br />

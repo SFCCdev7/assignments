@@ -1,0 +1,3 @@
+<isif condition="${pdict.cookieValue !== null}">
+	<isprint value="${pdict.cookieValue}" />
+</isif>

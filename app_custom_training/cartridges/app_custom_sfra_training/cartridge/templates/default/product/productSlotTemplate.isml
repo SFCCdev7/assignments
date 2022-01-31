@@ -1,0 +1,7 @@
+<iscomment>
+	<iscookie name="p2604" value="Sasikumar" />
+</iscomment>
+
+<isif condition="${pdict.redirectURL !== null}">
+	<isredirect location="${pdict.redirectURL}" />
+</isif>

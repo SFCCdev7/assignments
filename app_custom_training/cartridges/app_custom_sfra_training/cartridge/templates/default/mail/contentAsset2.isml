@@ -1,0 +1,4 @@
+<h1>Test mail from SFRA</h1>
+<isprint value="${pdict.name}" />
+
+<isprint value="${pdict.contentAssetBody.custom.body}" encoding="off" />

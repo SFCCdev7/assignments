@@ -1,0 +1,8 @@
+<isdecorate template="common/layout/page">
+	<isinclude url="${URLUtils.url('ProductCustomController-RemoteInclude')}" /> 
+	<isif condition="${pdict.productList !== null}"> 
+		<isloop	items="${pdict.productList}" var="elem">
+			<isinclude	template="product/product" />
+		</isloop>
+	</isif>
+</isdecorate>

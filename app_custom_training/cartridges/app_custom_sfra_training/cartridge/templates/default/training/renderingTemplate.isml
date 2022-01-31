@@ -1,0 +1,2 @@
+<ismodule template="components/content/contentAsset" name="contentAsset" attribute="aid" />
+<iscontentAsset aid="testContentAsset1" />
