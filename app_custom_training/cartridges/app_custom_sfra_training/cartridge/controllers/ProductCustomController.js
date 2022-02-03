@@ -100,4 +100,36 @@ server.get('Mail', function(req, res, next) {
     next();
 });
 
+server.get('EmailSubscription', function(req, res, next) {
+    var actionUrl = URLUtils.url('ProductCustomController-MailSubscriptionResult');
+    var mailSubscriptionForm = server.forms.getForm('emailSubscription');
+    res.render('mail/mailSubscriptionForm', { actionUrl: actionUrl, mailSubscriptionForm: mailSubscriptionForm })
+    next();
+});
+
+server.post('MailSubscriptionResult', function(req, res, next) {
+    try {
+        var mailSubscriptionForm = server.forms.getForm('emailSubscription');
+        var CustomObjectMgr = require('dw/object/CustomObjectMgr');
+        var Transaction = require('dw/system/Transaction');
+
+        if (mailSubscriptionForm.valid) {
+            var mailId = mailSubscriptionForm.email.value
+            var record = CustomObjectMgr.getCustomObject("LiveAreaEmailList", mailId);
+            Transaction.wrap(function() {
+                if (!record) record = CustomObjectMgr.createCustomObject("LiveAreaEmailList", mailId);
+                record.custom.firstName = mailSubscriptionForm.firstname.value;
+                record.custom.lastName = mailSubscriptionForm.lastname.value;
+                record.custom.isIndian = mailSubscriptionForm.isIndian.value;
+            });
+            res.render('mail/mailSubscriptionResult', { mailSubscriptionForm: mailSubscriptionForm, resultMsg: 'success' });
+            // res.json({ mailSubscriptionForm: mailSubscriptionForm });
+        } else res.redirect(URLUtils.url('ProductCustomController-EmailSubscription'))
+
+    } catch (err) {
+        res.json(err);
+    }
+    next();
+});
+
 module.exports = server.exports();
