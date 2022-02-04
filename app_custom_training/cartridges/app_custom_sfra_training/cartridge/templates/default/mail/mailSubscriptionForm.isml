@@ -6,9 +6,9 @@
         <div class="row">
             <div class="col-6">
                 <div class="form-group
-                    <isif condition="${!!pdict.mailSubscriptionForm.firstname.mandatory === true}">required</isif>">
+                    <isif condition="${!!pdict.emailSubscriptionForm.firstname.mandatory === true}">required</isif>">
                     <label class="form-control-label" for="registration-form-fname">
-                        <isprint value="${pdict.mailSubscriptionForm.firstname.label}" encoding="htmlcontent" />
+                        <isprint value="${pdict.emailSubscriptionForm.firstname.label}" encoding="htmlcontent" />
                     </label>
                     <input
                         type="text"
@@ -17,15 +17,15 @@
                         data-missing-error="${Resource.msg('error.message.required','forms',null)}"
                         data-range-error="${Resource.msg('error.message.50orless','forms',null)}"
                         aria-describedby="form-fname-error"
-                        <isprint value=${pdict.mailSubscriptionForm.firstname.attributes} encoding="off" />>
+                        <isprint value=${pdict.emailSubscriptionForm.firstname.attributes} encoding="off" />>
                     <div class="invalid-feedback" id="form-fname-error"></div>
                 </div>
             </div>
             <div class="col-6">
                 <div class="form-group
-                    <isif condition="${!!pdict.mailSubscriptionForm.lastname.mandatory === true}">required</isif>">
+                    <isif condition="${!!pdict.emailSubscriptionForm.lastname.mandatory === true}">required</isif>">
                     <label class="form-control-label" for="registration-form-lname">
-                        <isprint value="${pdict.mailSubscriptionForm.lastname.label}" encoding="htmlcontent" />
+                        <isprint value="${pdict.emailSubscriptionForm.lastname.label}" encoding="htmlcontent" />
                     </label>
                     <input
                         type="text"
@@ -34,7 +34,7 @@
                         data-missing-error="${Resource.msg('error.message.required','forms',null)}"
                         data-range-error="${Resource.msg('error.message.50orless','forms',null)}"
                         aria-describedby="form-lname-error"
-                        <isprint value=${pdict.mailSubscriptionForm.lastname.attributes} encoding="off" />>
+                        <isprint value=${pdict.emailSubscriptionForm.lastname.attributes} encoding="off" />>
                     <div class="invalid-feedback" id="form-lname-error"></div>
                 </div>
             </div>
@@ -43,9 +43,9 @@
         <div class="row">
             <div class="col-6">
                 <div class="form-group
-                    <isif condition="${!!pdict.mailSubscriptionForm.email.mandatory === true}">required</isif>">
+                    <isif condition="${!!pdict.emailSubscriptionForm.email.mandatory === true}">required</isif>">
                     <label class="form-control-label" for="registration-form-email">
-                        <isprint value="${pdict.mailSubscriptionForm.email.label}" encoding="htmlcontent" />
+                        <isprint value="${pdict.emailSubscriptionForm.email.label}" encoding="htmlcontent" />
                     </label>
                     <input
                         type="text"
@@ -55,64 +55,63 @@
                         data-pattern-mismatch="${Resource.msg('error.message.parse.email.profile.form','forms',null)}"
                         data-range-error="${Resource.msg('error.message.50orless','forms',null)}"
                         aria-describedby="form-email-error"
-                        <isprint value=${pdict.mailSubscriptionForm.email.attributes} encoding="off" />>
+                        <isprint value=${pdict.emailSubscriptionForm.email.attributes} encoding="off" />>
                     <div class="invalid-feedback" id="form-email-error"></div>
                 </div>
             </div>
             <div class="col-6">
-                <div class="form-group custom-control custom-checkbox <isif condition="${!!pdict.mailSubscriptionForm.isIndian.mandatory === true}">required</isif>">
+                <div class="form-group custom-control custom-checkbox <isif condition="${!!pdict.emailSubscriptionForm.isIndian.mandatory === true}">required</isif>">
                     <input
                         type="checkbox"
                         class="custom-control-input" id="add-to-email-list"
-                        <isprint value="${pdict.mailSubscriptionForm.isIndian.attributes}" encoding="off" />
+                        <isprint value="${pdict.emailSubscriptionForm.isIndian.attributes}" encoding="off" />
                     >
                     <label class="custom-control-label" for="add-to-email-list">
-                        <isprint value="${pdict.mailSubscriptionForm.isIndian.label}" encoding="htmlcontent" />
+                        <isprint value="${'isIndia'}" encoding="htmlcontent" />
                     </label>
                 </div>
             </div>
         </div>
 
-    <iscomment> 
+    
         <div class="row">
             <div class="col-6">
                 <div class="form-group
-                    <isif condition="${!!pdict.mailSubscriptionForm.gender.mandatory === true}">required</isif>">
-                    <label class="form-control-label" for="registration-form-gender">
-                        <isprint value="${pdict.mailSubscriptionForm.gender.label}" encoding="htmlcontent" />
+                    <isif condition="${!!pdict.emailSubscriptionForm.gender.mandatory === true}">required</isif>">
+                    <label class="form-control-label" for="registration-form-gender-female">
+                        <isprint value="${'Female'}" encoding="htmlcontent" />
                     </label>
                     <input
                         type="radio"
                         class="form-control"
-                        id="registration-form-gender"
+                        id="registration-form-gender-female"
                         data-missing-error="${Resource.msg('error.message.required','forms',null)}"
                         data-pattern-mismatch="${Resource.msg('error.message.parse.gender.profile.form','forms',null)}"
                         data-range-error="${Resource.msg('error.message.50orless','forms',null)}"
                         aria-describedby="form-gender-error"
                         value="female"
-                        <isprint value=${pdict.mailSubscriptionForm.gender.attributes} encoding="off" />>
+                        <isprint value=${pdict.emailSubscriptionForm.gender.attributes} encoding="off" />>
                     <div class="invalid-feedback" id="form-gender-error"></div>
 
                 <div class="form-group
-                    <isif condition="${!!pdict.mailSubscriptionForm.gender.mandatory === true}">required</isif>">
-                    <label class="form-control-label" for="registration-form-gender">
-                        <isprint value="${pdict.mailSubscriptionForm.gender.label}" encoding="htmlcontent" />
+                    <isif condition="${!!pdict.emailSubscriptionForm.gender.mandatory === true}">required</isif>">
+                    <label class="form-control-label" for="registration-form-gender-male">
+                        <isprint value="${'Male'}" encoding="htmlcontent" />
                     </label>
                     <input
                         type="radio"
                         class="form-control"
-                        id="registration-form-gender"
+                        id="registration-form-gender-male"
                         data-missing-error="${Resource.msg('error.message.required','forms',null)}"
                         data-pattern-mismatch="${Resource.msg('error.message.parse.gender.profile.form','forms',null)}"
                         data-range-error="${Resource.msg('error.message.50orless','forms',null)}"
                         aria-describedby="form-gender-error"
                         value="male"
-                        <isprint value=${pdict.mailSubscriptionForm.gender.attributes} encoding="off" />>
+                        <isprint value=${pdict.emailSubscriptionForm.gender.attributes} encoding="off" />>
                     <div class="invalid-feedback" id="form-gender-error"></div>
                 </div>
             </div>
         </div> 
-    </iscomment>
 
         <div class="col-12 text-center">
             <button type="submit" class="btn btn-block btn-primary w-2">

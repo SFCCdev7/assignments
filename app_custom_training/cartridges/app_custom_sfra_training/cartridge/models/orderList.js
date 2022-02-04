@@ -12,6 +12,8 @@ function getOrderListOfCustomer() {
             shippingAddrFName: order.shipments[0].shippingAddress.firstName,
             shippingAddrLName: order.shipments[0].shippingAddress.lastName,
             mail: order.customerEmail,
+            middleName: order.shipments[0].shippingAddress.custom.middleName,
+            companyName: order.shipments[0].shippingAddress.companyName,
         };
         orders.add(orderDetails);
     }

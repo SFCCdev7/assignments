@@ -53,6 +53,12 @@
 			missing-error="error.message.required"
 			parse-error="error.message.parse.phone.profile.form"
 			type="string"/> 
+
+		<field formid="address1" label="label.input.address1" type="string" mandatory="true" binding="address1" max-length="50"
+           missing-error="address.address1.missing" range-error="error.message.50orless"/>
+
+    	<field formid="address2" label="label.input.address2" type="string" mandatory="false" binding="address2"
+           max-length="50" range-error="error.message.50orless"/>
 		
 		<!-- use set of supported countries -->
 		<field formid="country" label="label.input.country" type="string" mandatory="true" binding="countryCode"
@@ -64,7 +70,7 @@
 
 		<!-- use global state list -->
 		<include formid="states" name="states" missing-error="address.state.missing" parse-error="error.message.required" value-error="error.message.required"/>
-		
+
 		<!-- city name-->
 		<field formid="city" label="label.input.city" type="string" mandatory="true" binding="city" min-length="2"
            max-length="50" missing-error="address.city.missing" range-error="error.message.between2and50"/>
@@ -115,9 +121,6 @@
 			range-error="error.message.8_255characters"
 			value-error="error.message.currentpasswordnomatch"
 			type="string" />
-
-		
-
 		
 		<include formid="newpasswords" name="newPasswords"/>
 	</group>

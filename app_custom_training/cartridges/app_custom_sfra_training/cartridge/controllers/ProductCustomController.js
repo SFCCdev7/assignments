@@ -102,8 +102,8 @@ server.get('Mail', function(req, res, next) {
 
 server.get('EmailSubscription', function(req, res, next) {
     var actionUrl = URLUtils.url('ProductCustomController-MailSubscriptionResult');
-    var mailSubscriptionForm = server.forms.getForm('emailSubscription');
-    res.render('mail/mailSubscriptionForm', { actionUrl: actionUrl, mailSubscriptionForm: mailSubscriptionForm })
+    var emailSubscriptionForm = server.forms.getForm('emailSubscription');
+    res.render('mail/mailSubscriptionForm', { actionUrl: actionUrl, emailSubscriptionForm: emailSubscriptionForm })
     next();
 });
 

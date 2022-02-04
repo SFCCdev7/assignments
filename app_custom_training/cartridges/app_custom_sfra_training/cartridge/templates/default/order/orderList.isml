@@ -2,21 +2,25 @@
     <isif condition="${pdict.orderList !== null && pdict.orderList.length > 0}">
         <table>
             <tr>
-                <th>${Resource.msg('order.table.head1')}</th>
-                <th>${Resource.msg('order.table.head2')}</th>
-                <th>${Resource.msg('order.table.head3')}</th>
-                <th>${Resource.msg('order.table.head4')}</th>
+                <th>${Resource.msg('order.table.head1','orderList',null)}</th>
+                <th>${Resource.msg('order.table.head2','orderList',null)}</th>
+                <th>${Resource.msg('order.table.head3','orderList',null)}</th>
+                <th>${Resource.msg('order.table.head4','orderList',null)}</th>
+                <th>${Resource.msg('order.table.head5','orderList',null)}</th>
+                <th>${Resource.msg('order.table.head6','orderList',null)}</th>
             </tr>
             <isloop items="${pdict.orderList}" var="order" status="loopstatus">
                 <tr>
-                    <td>${Resource.msgf('order.table.body', 'message', null, order.orderId)}</td>
-                    <td>${Resource.msgf('order.table.body', 'message', null, order.shippingAddrFName)}</td>
-                    <td>${Resource.msgf('order.table.body', 'message', null, order.shippingAddrLName)}</td>
-                    <td>${Resource.msgf('order.table.body', 'message', null, order.mail)}</td>
+                    <td>${Resource.msgf('order.table.body', 'orderList', null, order.orderId)}</td>
+                    <td>${Resource.msgf('order.table.body', 'orderList', null, order.shippingAddrFName)}</td>
+                    <td>${Resource.msgf('order.table.body', 'orderList', null, order.shippingAddrLName)}</td>
+                    <td>${Resource.msgf('order.table.body', 'orderList', null, order.mail)}</td>
+                    <td>${Resource.msgf('order.table.body', 'orderList', null, order.middleName)}</td>
+                    <td>${Resource.msgf('order.table.body', 'orderList', null, order.companyName)}</td>
                 </tr>
             </isloop>
         </table>
     <iselse/>
-        <h1>${Resource.msg('order.empty.msg')}</h1>
+        <h1>${Resource.msg('order.empty.msg','orderList',null)}</h1>
     </isif>
 </isdecorate>
